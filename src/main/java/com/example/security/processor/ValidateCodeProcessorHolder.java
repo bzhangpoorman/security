@@ -5,13 +5,13 @@ import com.example.security.type.ValidateCodeType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Component
 public class ValidateCodeProcessorHolder {
 
-    @Autowired
-    private Map<String, ValidateCodeProcessor> validateCodeProcessors;
+    private Map<String, ValidateCodeProcessor> validateCodeProcessors = new HashMap<>();
 
     public ValidateCodeProcessor findValidateCodeProcessor(ValidateCodeType type) {
         return findValidateCodeProcessor(type.toString().toLowerCase());
