@@ -1,0 +1,40 @@
+server:
+  port: 8088
+
+spring:
+  security:
+    user:
+      password: 123456
+      name: admin
+      roles: admin
+  thymeleaf:
+    mode: HTML
+    encoding: utf-8
+    cache: false
+  mvc:
+    static-path-pattern: /resource/**
+  redis:
+    password: vz01pknqOn6Lp6n7ROm5ELPn80SA7TCR
+    timeout: 5000
+    jedis:
+      pool:
+        max-active: 20
+        max-idle: 20
+        max-wait: -1
+        min-idle: 20
+    sentinel:
+      master: mymaster
+      nodes: 10.10.10.163:26379
+    database: 2
+
+test:
+  security:
+    browser:
+      login-page: /demo
+      login-response-type: REDIRECT
+    code:
+      image:
+        #         设置图形验证码的长度为6，不配置则为默认验证码属性
+        length: 6
+        width: 30
+        url: /form
