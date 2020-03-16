@@ -3,13 +3,14 @@ package com.example.security.generator;
 import com.example.security.bean.ImageCode;
 import com.example.security.properties.SecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.context.request.ServletWebRequest;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Random;
-
+@Component("imageValidateCodeGenerator")
 public class ImageCodeGenerator implements ValidateCodeGenerator {
     @Autowired
     private SecurityProperties securityProperties;

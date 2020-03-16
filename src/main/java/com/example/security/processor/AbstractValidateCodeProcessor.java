@@ -110,6 +110,7 @@ public abstract class AbstractValidateCodeProcessor<C extends ValidateCode> impl
         try {
             codeInRequest = ServletRequestUtils.getStringParameter(request.getRequest(),
                     processorType.getParamNameOnValidate());
+            System.out.println("你号是：" + codeInRequest);
         } catch (ServletRequestBindingException e) {
             throw new ValidateCodeException("获取验证码的值失败");
         }
